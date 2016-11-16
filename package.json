@@ -1,0 +1,23 @@
+{
+  "name": "react-native-sentry-android",
+  "version": "0.0.0",
+  "description": "Report crashes from JavaScript via Sentry for Android",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "sentry",
+    "raven",
+    "crash reporting",
+    "crash reporter",
+    "crash report",
+    "android"
+  ],
+  "author": "Ant Cosentino <ant@io.co.za>",
+  "license": "BSD-3",
+  "peerDependencies": {
+    "react-native": "^0.29.0"
+  }
+}
