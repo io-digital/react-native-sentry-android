@@ -32,11 +32,11 @@ public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaMo
   @Override
   public Map<String, Object> getConstants() {
     final Map<String, Object> constants = new HashMap<>();
-    constants.put("SENTRY_EVENT_LEVEL_FATAL", Event.Level.FATAL);
-    constants.put("SENTRY_EVENT_LEVEL_ERROR", Event.Level.ERROR);
-    constants.put("SENTRY_EVENT_LEVEL_WARNING", Event.Level.WARNING);
-    constants.put("SENTRY_EVENT_LEVEL_INFO", Event.Level.INFO);
-    constants.put("SENTRY_EVENT_LEVEL_DEBUG", Event.Level.DEBUG);
+    constants.put("SENTRY_EVENT_LEVEL_FATAL", Level.FATAL);
+    constants.put("SENTRY_EVENT_LEVEL_ERROR", Level.ERROR);
+    constants.put("SENTRY_EVENT_LEVEL_WARNING", Level.WARNING);
+    constants.put("SENTRY_EVENT_LEVEL_INFO", Level.INFO);
+    constants.put("SENTRY_EVENT_LEVEL_DEBUG", Level.DEBUG);
     return constants;
   }
 
