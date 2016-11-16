@@ -26,7 +26,7 @@ public final class ReactNativeSentryAndroidPackage implements ReactPackage {
   @Override
   public List<NativeModule> createNativeModules(ReactApplicationContext rctx) {
     List<NativeModule> modules = new ArrayList<>();
-    modules.add(new ReactNativeSentryModule(rctx));
+    modules.add(new ReactNativeSentryAndroidModule(rctx));
     return modules;
   }
 }
