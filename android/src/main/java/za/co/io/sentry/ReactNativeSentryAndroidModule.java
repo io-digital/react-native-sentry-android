@@ -8,7 +8,6 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 
 import com.getsentry.raven.Raven;
-import com.getsentry.raven.RavenFactory;
 import com.getsentry.raven.event.Event.Level;
 import com.getsentry.raven.event.EventBuilder;
 import com.getsentry.raven.event.interfaces.ExceptionInterface;
@@ -22,7 +21,8 @@ public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaMo
   public ReactNativeSentryAndroidModule(ReactApplicationContext rctx) {
     super(rctx);
     // Raven.init(this.getCurrentActivity().getApplication());
-    Raven.init(rctx.getBaseContext());
+    // Raven.init(rctx.getBaseContext());
+    Raven.init(this.getCurrentActivity().getBaseContext());
   }
 
   @Override
