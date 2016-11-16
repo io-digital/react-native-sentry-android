@@ -58,8 +58,7 @@ public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaMo
     eb.withLevel(getLevel(event.getString("level")));
     eb.withLogger(event.getString("class"));
     eb.withSentryInterface(new ExceptionInterface(new Exception(event.getString("stack"))));
-    Raven.runBuilderHelpers(eb);
-    Raven.sendEvent(eb.build());
+    Raven.capture(eb.build());
     promise.resolve(null);
   }
 }
