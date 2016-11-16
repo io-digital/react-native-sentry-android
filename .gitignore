@@ -1,5 +1,9 @@
 
 # jetbrains
+gradlew
+gradlew.bat
+.gradle/
+gradle/
 local.properties
 *.iml
 .idea/
