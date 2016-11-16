@@ -22,7 +22,7 @@ public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaMo
   public ReactNativeSentryAndroidModule(ReactApplicationContext rctx) {
     super(rctx);
     // Raven.init(this.getCurrentActivity().getApplication());
-    Raven.init(rctx);
+    Raven.init(rctx.getApplicationContext());
   }
 
   @Override
