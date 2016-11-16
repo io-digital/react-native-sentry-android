@@ -1,6 +1,6 @@
 {
   "name": "react-native-sentry-android",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Report crashes from JavaScript with Sentry for Android",
   "main": "index.js",
   "scripts": {
