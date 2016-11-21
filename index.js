@@ -1,3 +1,3 @@
 
-import {NativeModules} from 'react-native';
-export default NativeModules.ReactNativeSentryAndroid;
+import {NativeModules} from 'react-native'
+export default NativeModules.ReactNativeSentryAndroid
