@@ -11,7 +11,7 @@ Download and link with `npm install --save react-native-sentry-android && rnpm l
 ## Usage
 
 ```javascript
-import sentry from 'react-native-sentry-android';
+import sentry from 'react-native-sentry-android'
 
 // ...
 
