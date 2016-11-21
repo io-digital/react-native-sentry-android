@@ -47,7 +47,8 @@ public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaMo
 
   @ReactMethod
   @SuppressWarnings("unused")
-  public final void forceCrash(final Promise promise) throws Error {
-    throw new Error("just because");
+  public final void forceCrash(final Promise promise) {
+    int[] a = new int[1];
+    int b = a[1];
   }
 }
