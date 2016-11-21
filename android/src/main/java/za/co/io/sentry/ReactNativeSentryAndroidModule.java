@@ -5,18 +5,14 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
-
 import com.getsentry.raven.android.Raven;
 import com.getsentry.raven.event.Event.Level;
 import com.getsentry.raven.event.EventBuilder;
 import com.getsentry.raven.event.interfaces.ExceptionInterface;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaModule {
 
-  public ReactNativeSentryAndroidModule(ReactApplicationContext rctx) {
+  public ReactNativeSentryAndroidModule(final ReactApplicationContext rctx) {
     super(rctx);
     Raven.init(rctx);
   }
@@ -29,7 +25,7 @@ public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaMo
   private static final Level getLevel(final String level) {
     if (level == null || level.isEmpty()) return Level.DEBUG;
     final String levelLowerCase = level.toLowerCase();
-    if (levelLowerCase== "fatal") return Level.FATAL;
+    if (levelLowerCase == "fatal") return Level.FATAL;
     else if (levelLowerCase == "error") return Level.ERROR;
     else if (levelLowerCase == "warning") return Level.WARNING;
     else if (levelLowerCase == "info") return Level.INFO;
@@ -38,6 +34,7 @@ public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaMo
   }
 
   @ReactMethod
+  @SuppressWarnings("unused")
   public final void capture(final ReadableMap event, final Promise promise) {
     final EventBuilder eb = new EventBuilder();
     eb.withMessage(event.getString("message"));
