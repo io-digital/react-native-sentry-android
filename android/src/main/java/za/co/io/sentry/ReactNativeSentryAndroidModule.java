@@ -6,6 +6,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.getsentry.raven.android.Raven;
+import com.getsentry.raven.android.event.helper.AndroidEventBuilderHelper;
 import com.getsentry.raven.event.Event.Level;
 import com.getsentry.raven.event.EventBuilder;
 import com.getsentry.raven.event.interfaces.ExceptionInterface;
@@ -41,14 +42,14 @@ public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaMo
     eb.withLevel(getLevel(event.getString("level")));
     eb.withLogger(event.getString("class"));
     eb.withSentryInterface(new ExceptionInterface(new Exception(event.getString("stack"))));
+    new AndroidEventBuilderHelper(getReactApplicationContext()).helpBuildingEvent(eb);
     Raven.capture(eb.build());
     promise.resolve(null);
   }
 
   @ReactMethod
   @SuppressWarnings("unused")
-  public final void forceCrash(final Promise promise) {
-    int[] a = new int[1];
-    int b = a[1];
+  public final void forceCrash(String reason, final Promise promise) {
+    throw new RuntimeException(reason);
   }
 }
