@@ -44,4 +44,10 @@ public final class ReactNativeSentryAndroidModule extends ReactContextBaseJavaMo
     Raven.capture(eb.build());
     promise.resolve(null);
   }
+
+  @ReactMethod
+  @SuppressWarnings("unused")
+  public final void forceCrash(final Promise promise) throws Error {
+    throw new Error("just because");
+  }
 }
